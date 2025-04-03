@@ -96,19 +96,45 @@ footer {
     background-color: #121217;
 }
 
-.contact-link {
-    color: #ff9800;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: 2px solid #ff9800;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+footer button{
+    font-size: 1rem;
+    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
 }
 
-.contact-link:hover {
-    background-color: #ff9800;
-    color: #121217;
+footer button a{
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+}
+
+footer button:after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #4837ff;
+    transition: all 0.35s;
+    border-radius: 4px;
+}
+
+footer button:hover{
+    color: #fff;
+}
+
+footer button:hover:after{
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -131,4 +157,108 @@ footer {
     .feature-title {
         font-size: 2rem;
     }
+}
+
+.spacer {
+    padding-bottom: 100px;
+}
+
+.innovation-ani{
+    background: linear-gradient(to top, #181818 0%,  #181818 100%);
+    padding: 200px 100px 50px 100px;
+}
+
+.innovation-ani svg {
+    order: -1; /* Place SVG before (above) h2 */
+    width: 100%; /* Ensure SVG fills the width */
+    height: 100%; /* Allow height to adjust */
+}
+
+.innovation-ani h2{
+    text-align: center;
+    transform: translateY(300%);
+}
+
+.innovation-ani h2 span{
+    font-size: 3rem;
+    background-color: #ff8177;
+    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.8s ease;
+}
+
+.innovation-ani h2 span:nth-child(1) {
+    font-size: 5rem;
+}
+
+.innovation-ani h2 span:hover{
+    font-size: 5rem;
+    transition: all 0.1s ease;
+}
+
+.layer2 {
+    background-image: url('./layer2.svg')
+}
+
+.layer-spacer {
+    aspect-ratio: 960/540;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.flip {
+    transform: scaleY(-1);
+}
+
+.rose {
+    background: #e0223e;
+}
+
+.blue-text {
+    background-image: linear-gradient(to top, #b721ff 0%, #21d4fd 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5rem;
+}
+
+.no-padding {
+    margin: 0;
+    padding: 0;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+.scroll-trigger {
+    /* Add any necessary styling for the container */
+    position: relative; /* Needed for absolute positioning of the text */
+    overflow: hidden; /* Prevent text from being visible before animation */
+}
+
+.pop-trigger {
+    margin-top: 300px; /* Start below its original position */
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.pop-trigger.active {
+    margin-top: 0; /* Move to its original position */
+    opacity: 1;
+}
+
+.sliding-image {
+    /*transition: 0.3s ease-in-out;*/
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    background-size: cover;
+    background-image: url("./IMG_2150.jpg");
+    border-radius: 20px;
 }
