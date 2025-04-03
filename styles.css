@@ -7,11 +7,65 @@ body {
     line-height: 1.6;
 }
 
+/*.hero {*/
+/*    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-image.jpg') center/cover no-repeat; !* Hero image with overlay *!*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    padding: 200px 20px;*/
+/*}*/
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-image.jpg') center/cover no-repeat; /* Hero image with overlay
-    color: white; */
+    background: linear-gradient(135deg, #18181e, #282830); /* Dark gradient background */
+    color: white;
     text-align: center;
     padding: 200px 20px;
+    position: relative; /* For absolutely positioned elements */
+    overflow: hidden; /* To clip animations */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to right, #ff9800, #e91e63, #9c27b0, #3f51b5, #2196f3, #00bcd4);
+    animation: rotateGradient 10s linear infinite;
+    z-index: -1; /* Place behind text */
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-title {
+    font-size: 3.5rem; /* Larger font */
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1s ease-out; /* Fade in animation */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation: fadeIn 1.5s ease-out; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .hero-title {
