@@ -6,20 +6,19 @@ body {
     padding: 0;
     line-height: 1.6;
 }
-
-/*.hero {*/
-/*    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-image.jpg') center/cover no-repeat; !* Hero image with overlay *!*/
-/*    color: white;*/
-/*    text-align: center;*/
-/*    padding: 200px 20px;*/
-/*}*/
 .hero {
-    background: linear-gradient(135deg, #18181e, #282830); /* Dark gradient background */
+    background: linear-gradient(135deg, #222, #333);
     color: white;
     text-align: center;
     padding: 200px 20px;
-    position: relative; /* For absolutely positioned elements */
-    overflow: hidden; /* To clip animations */
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+.hero:hover {
+    background: linear-gradient(135deg, #333, #222); /* Reverse gradient on hover */
+    transform: translateY(-5px); /* Slight upward movement on hover */
 }
 
 .hero::before {
@@ -31,7 +30,43 @@ body {
     height: 200%;
     background: linear-gradient(to right, #ff9800, #e91e63, #9c27b0, #3f51b5, #2196f3, #00bcd4);
     animation: rotateGradient 10s linear infinite;
-    z-index: -1; /* Place behind text */
+    z-index: -1;
+    opacity: 0.8; /* Slightly transparent */
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transitions */
+}
+
+.hero-title:hover {
+    color: #ff9800; /* Change color on hover */
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Add transitions */
+}
+
+.hero-subtitle:hover {
+    opacity: 0.8; /* Slightly transparent on hover */
+    transform: translateY(-3px); /* Slight upward movement on hover */
 }
 
 @keyframes rotateGradient {
@@ -315,4 +350,53 @@ footer button:hover:after{
     background-size: cover;
     background-image: url("./IMG_2150.jpg");
     border-radius: 20px;
+}
+
+.sliding-text-container {
+    width: 100%;
+    position: relative;
+}
+
+.sliding-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: slideText 20s linear infinite; /* Adjust duration */
+    font-size: 2rem;
+    padding-left: 100%; /* Start off-screen */
+}
+
+@keyframes slideText {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%); /* Move off-screen */
+    }
+}
+
+.sliding-text span {
+    margin: 0 20px;
+}
+
+.spacer-margin {
+    padding-top: 20px;
+}
+
+.spacer-padding {
+    padding: 75px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #96c715, #3f51b5, #ff6b6b);
+    background-size: 400% 400%;
+    animation: colorfulGradient 10s ease infinite;
+}
+
+@keyframes colorfulGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
