@@ -391,12 +391,28 @@ footer button:hover:after{
 
 @keyframes colorfulGradient {
     0% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
     50% {
         background-position: 100% 50%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0 50%;
     }
+}
+
+.paragraph {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding: 3.5rem; /* Add padding around the paragraph content */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    color: white;
+    transition: 0.5s ease;
+}
+
+.paragraph:hover {
+    background-color: #ff9800; /* Accent color */
+    color: #111; /* Darker text color on hover for contrast */
 }
