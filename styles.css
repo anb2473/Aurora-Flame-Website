@@ -7,16 +7,14 @@ body {
     line-height: 1.6;
 }
 .hero {
-    background: linear-gradient(135deg, #222, #333);
+    /*background: linear-gradient(135deg, #222, #333);*/
     color: white;
     text-align: center;
     padding: 200px 20px;
     position: relative;
     overflow: hidden;
     transition: background 0.3s ease, transform 0.3s ease; /* Add transform transition */
-}
 
-.hero:hover {
     background: linear-gradient(135deg, #333, #222); /* Reverse gradient on hover */
     transform: translateY(-5px); /* Slight upward movement on hover */
 }
@@ -415,4 +413,14 @@ footer button:hover:after{
 .paragraph:hover {
     background-color: #ff9800; /* Accent color */
     color: #111; /* Darker text color on hover for contrast */
+}
+
+.logo {
+    background-image: url('logo.png');
+    transition: 0.3s ease-in-out;
+    background-size: contain;
+    width: 300px;
+    height: 200px;
+    border-radius: 180px;
+    margin: 0 auto;
 }
